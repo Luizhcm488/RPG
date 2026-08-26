@@ -100,7 +100,7 @@ armazem = {
     },
     
     "Vara de Ouro": {
-        "preço": 500,
+        "preco": 500,
         "durabilidade": 40,
         "tipo": "vara_pesca",
         "nivel": 3
@@ -307,8 +307,8 @@ def iniciar():
             print("Opção inválida, tente novamente.")
             continue
         if escolha == 0:
-        	print("Cancelando...")
-        	break
+            print("Cancelando...")
+            break
 
         nomes = list(personagens)
 
@@ -350,32 +350,35 @@ def menu_jogo(personagem):
             trabalhar(personagem)
             
         elif escolha == 2:
-        	escolher_trabalho(personagem)
+            escolher_trabalho(personagem)
         	
         elif escolha == 3:
-        	mineracao(personagem)
+            mineracao(personagem)
         	
         elif escolha == 4:
-        	loja(personagem)
+            loja(personagem)
         	
         elif escolha == 5:
-        	cassino(personagem)
+            cassino(personagem)
         
         elif escolha == 6:
-        	inventario(personagem)
+            inventario(personagem)
         	
         elif escolha == 7:
-        	crime(personagem)
+            crime(personagem)
         	
         elif escolha == 8:
-        	limpar_ficha(personagem)
+            limpar_ficha(personagem)
         	
         elif escolha == 9:
-        	banco(personagem)
+            banco(personagem)
+
+        elif escolha == 10:
+            print("Pesca ainda não implementada!")
         
         elif escolha == len(opcoes2):
-        	print("Saindo...\nAté logo!")
-        	break
+            print("Saindo...\nAté logo!")
+            break
 
 
 def inventario(personagem):
@@ -488,19 +491,19 @@ def mineracao(personagem):
             personagem["inicio_ciclo_mineracao"] = None
             
     if personagem["mineracoes_restantes"] == 0:
-    	inicio_ciclo = personagem["inicio_ciclo_mineracao"]
+        inicio_ciclo = personagem["inicio_ciclo_mineracao"]
     	
-    	tempo_passado = agora - inicio_ciclo
-    	tempo_restante = int(cooldown - tempo_passado)
+        tempo_passado = agora - inicio_ciclo
+        tempo_restante = int(cooldown - tempo_passado)
         
-    	minutos, segundos = divmod(tempo_restante, 60)
+        minutos, segundos = divmod(tempo_restante, 60)
     	
-    	print("Você minerou bastante, seus braços estão destruídos!")
-    	print(f"Você pode minerar novamente em {minutos}min {segundos}seg")
-    	return
+        print("Você minerou bastante, seus braços estão destruídos!")
+        print(f"Você pode minerar novamente em {minutos}min {segundos}seg")
+        return
     
     if personagem["inicio_ciclo_mineracao"] is None:
-    	personagem["inicio_ciclo_mineracao"] = agora
+        personagem["inicio_ciclo_mineracao"] = agora
 
     chance = random.randint(1, 100)
 
@@ -858,8 +861,9 @@ def excluir():
             continue
         
         if escolha == 0:
-        	print("Cancelando...")
-        	break
+            print("Cancelando...")
+            break
+
         nomes = list(personagens)
 
         nome_escolhido = nomes[escolha - 1]
@@ -878,29 +882,29 @@ def saldo(personagem):
 
 
 def depositar(personagem):
-	print("Opção 'Depositar' selecionada!")
+    print("Opção 'Depositar' selecionada!")
 	
-	try:
-	    deposito = int(input(f"Seu dinheiro: R${personagem['dinheiro']}\nQual quantia você gostaria de depositar? R$"))
+    try:
+        deposito = int(input(f"Seu dinheiro: R${personagem['dinheiro']}\nQual quantia você gostaria de depositar? R$"))
 	
-	except ValueError:
-		print("Digite apenas números!")
-		return
-		
-	if deposito > personagem["dinheiro"]:
-		print("Saldo insuficiente!")
-		return
+    except ValueError:
+        print("Digite apenas números!")
+        return
+
+    if deposito > personagem["dinheiro"]:
+        print("Saldo insuficiente!")
+        return
 	
-	if deposito <= 0:
-		print("Valor inválido!")
-		return
+    if deposito <= 0:
+        print("Valor inválido!")
+        return
 	
-	personagem["dinheiro"] -= deposito
-	personagem["saldo"] += deposito
+    personagem["dinheiro"] -= deposito
+    personagem["saldo"] += deposito
 	
-	personagem["extrato"].append(f"Depósito Realizado: +{deposito:.2f}")
-	salvar_personagens()
-	print(f"A quantia de {deposito} foi depositada com sucesso!")
+    personagem["extrato"].append(f"Depósito Realizado: +{deposito:.2f}")
+    salvar_personagens()
+    print(f"A quantia de {deposito} foi depositada com sucesso!")
 	
 	
 def sacar(personagem):
@@ -1092,26 +1096,23 @@ def banco(personagem):
             continue
         
         if escolha == 1:
-        	saldo(personagem)
+            saldo(personagem)
         	
         elif escolha == 2:
-        	depositar(personagem)
+            depositar(personagem)
         
         elif escolha == 3:
-        	sacar(personagem)
+            sacar(personagem)
         	
         elif escolha == 4:
-        	mostrar_extrato(personagem)
+            mostrar_extrato(personagem)
         	
         elif escolha == 5:
-        	investir(personagem)
-        	
+            investir(personagem)
+
         elif escolha == 6:
-        	carteira_investimentos(personagem)
-        	
-        elif escolha == 7:
-        	print("Pesca ainda não implementada!")
-        
+            carteira_investimentos(personagem)
+
         elif escolha == len(opcoes_banco):
             print("Saindo...\nAté logo!")
             break
@@ -1153,7 +1154,7 @@ while True:
         print("Tutorial ainda não implementado!")
         
     elif escolha == 4:
-    	excluir()
+        excluir()
 
     elif escolha == len(opcoes1):
         print("Saindo...")
