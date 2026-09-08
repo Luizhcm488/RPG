@@ -38,49 +38,49 @@ def cassino(personagem):
         personagem["dinheiro"] += premio
         
         
-    if slot1 == "🍓":
-        print(
-            f"É, até que você é sortudinho(a)... "
-            f"R${premio} na conta."
-        )
+        if slot1 == "🍓":
+            print(
+                f"É, até que você é sortudinho(a)... "
+                f"R${premio} na conta."
+            )
 
-    elif slot1 == "🍒":
-        print(
-            f"Olha só! Parabéns, nunca vi ninguém "
-            f"ganhar R${premio} fácil assim!"
-        )
+        elif slot1 == "🍒":
+            print(
+                f"Olha só! Parabéns, nunca vi ninguém "
+                f"ganhar R${premio} fácil assim!"
+            )
 
-    elif slot1 == "🍎":
-        print(
-            f"Três iguais?! Você só pode ser um mago "
-            f"ou algo assim! +R${premio}"
-        )
+        elif slot1 == "🍎":
+            print(
+                f"Três iguais?! Você só pode ser um mago "
+                f"ou algo assim! +R${premio}"
+            )
 
-    elif slot1 == "🍅":
-        print(
-            f"UM TOMATE?! KKKKKKKKK "
-            f"Seja lá como isso vale dinheiro, +R${premio}!"
-        )
+        elif slot1 == "🍅":
+            print(
+                f"UM TOMATE?! KKKKKKKKK "
+                f"Seja lá como isso vale dinheiro, +R${premio}!"
+            )
 
-    elif slot1 == "🌶️":
-        print(
-            f"UAU! Você pode ficar sem trabalhar o resto "
-            f"da semana! R${premio} entrando na conta!"
-        )
+        elif slot1 == "🌶️":
+            print(
+                f"UAU! Você pode ficar sem trabalhar o resto "
+                f"da semana! R${premio} entrando na conta!"
+            )
 
-    elif slot1 == "🍉":
-        print(
-            f"VOCÊ É MUITO SORTUDO! "
-            f"Toma aí seus R${premio}!!!"
-        )
+        elif slot1 == "🍉":
+            print(
+                f"VOCÊ É MUITO SORTUDO! "
+                f"Toma aí seus R${premio}!!!"
+            )
 
-    elif slot1 == "💎":
-        print(
-            "JAAACKPOOOOOOT HAHAHAHA!!!\n"
-            "AUMENTE O VOLUME, ISSO VAI SER UM FUNERAL "
-            "PARA OS VIVOS!!!\n"
-            f"+R${premio}"
-        )
+        elif slot1 == "💎":
+            print(
+                "JAAACKPOOOOOOT HAHAHAHA!!!\n"
+                "AUMENTE O VOLUME, ISSO VAI SER UM FUNERAL "
+                "PARA OS VIVOS!!!\n"
+                f"+R${premio}"
+            )
 
     else:
         
