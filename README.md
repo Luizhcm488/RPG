@@ -76,21 +76,17 @@ RPG/
 
 Clone o repositório:
 
-```bash
-git clone git@github.com:candeany/RPG.git
-```
+git clone git@github.com:Luizhcm488/RPG.git
 
 Entre na pasta:
 
-```bash
+
 cd RPG
-```
 
 Execute:
 
-```bash
 python3 main.py
-```
+
 
 O projeto utiliza apenas bibliotecas padrão do Python, portanto não é necessário instalar dependências externas.
 
